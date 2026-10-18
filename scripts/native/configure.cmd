@@ -1,0 +1,1 @@
+@node "%~dp0configure.js" %*
