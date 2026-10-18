@@ -1,0 +1,17 @@
+{
+  "name": "kkv",
+  "version-string": "0.1.0",
+  "description": "Kryft Key-Value configuration and data format library",
+  "license": "Apache-2.0",
+  "dependencies": [
+    "rang",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}

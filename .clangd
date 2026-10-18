@@ -1,0 +1,26 @@
+
+Documentation:
+  CommentFormat: Doxygen
+
+---
+If:
+  PathMatch: ^(src|include|private|tests|examples)/.*\.(cpp|cc|cxx|h|hpp)$
+CompileFlags:
+  CompilationDatabase: build
+  Remove: [/Fo*, /Fd*]
+
+---
+If:
+  PathMatch: ^python/.*\.(cpp|cc|cxx|h|hpp)$
+CompileFlags:
+  CompilationDatabase: build-python
+  Add:
+    - -I${workspaceFolder}/include
+    - -I${workspaceFolder}/private
+  Remove: [/Fo*, /Fd*]
+
+---
+If:
+  PathMatch: ^emscripten/.*\.(cpp|cc|cxx|h|hpp)$
+CompileFlags:
+  CompilationDatabase: build-wasm

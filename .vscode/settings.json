@@ -1,0 +1,11 @@
+{
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": true,
+  "cmake.configurePreset": "default",
+  "cmake.buildPreset": "default",
+  "cmake.testPreset": "default",
+  "clangd.path": "${workspaceFolder}/tools/clangd.cmd",
+  "clangd.arguments": [
+    "--query-driver=**/clang-cl.exe,**/clang++.exe,**/em++.exe"
+  ]
+}

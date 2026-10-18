@@ -1,0 +1,20 @@
+
+[settings]
+os=Emscripten
+arch=wasm
+build_type=Release
+compiler=emcc
+compiler.version=6.0.12
+compiler.cppstd=20
+compiler.libcxx=libc++
+
+[conf]
+tools.build:compiler_executables={'c': 'emcc', 'cpp': 'em++'}
+tools.cmake.cmaketoolchain:user_toolchain=['$ENV{EMSDK}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake']
+
+[buildenv]
+CC=emcc
+CXX=em++
+AR=emar
+NM=emnm
+RANLIB=emranlib

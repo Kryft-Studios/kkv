@@ -1,0 +1,74 @@
+
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Ninja Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_COMPILER": "clang-cl",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "BUILD_TESTING": "ON",
+        "KKV_CONAN_OUTPUT_DIR": "${sourceDir}/build/conan"
+      }
+    },
+    {
+      "name": "wasm",
+      "displayName": "Emscripten WebAssembly Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-wasm",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_TESTING": "OFF",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "KKV_BUILD_PYTHON": "OFF",
+        "KKV_CONAN_OUTPUT_DIR": "${sourceDir}/build-wasm/conan"
+      }
+    },
+    {
+      "name": "python",
+      "displayName": "Python Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-python",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "clang-cl",
+        "BUILD_TESTING": "OFF",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "KKV_CONAN_OUTPUT_DIR": "${sourceDir}/build-python/conan",
+        "KKV_BUILD_PYTHON": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default"
+    },
+    {
+      "name": "wasm",
+      "configurePreset": "wasm"
+    },
+    {
+      "name": "python",
+      "configurePreset": "python"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

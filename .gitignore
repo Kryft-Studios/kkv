@@ -1,0 +1,36 @@
+# NATIVE BUILD
+build
+
+# EMSCRIPTEN
+dist
+
+# COMPILED
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+
+# CLANGD and all the cache BROTHA
+.cache
+
+# APPLE BEING APLE
+.DS_Store
+
+# VS CODE
+.vs/
+
+# JETBRAINS
+.idea/
+
+# PNPM
+node_modules/
+
+
+# WASM BUILD
+build-wasm/
+
+build-python/

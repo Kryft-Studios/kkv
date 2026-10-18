@@ -1,0 +1,31 @@
+{
+  "name": "kkv",
+  "version": "1.0.0",
+  "description": "The official parsing library for the 'kkv' Lanaguage. Written in C++",
+  "main": "em/kkv.js",
+  "types": "em/kkv.d.ts",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/em/test.js",
+    "build": "node scripts/em/build.js",
+    "prepublishOnly": "node scripts/em/ci.js"
+  },
+  "keywords": [
+    "csv",
+    "kv",
+    "kkv",
+    "data"
+  ],
+  "author": {
+    "name": "Kryft-Studios",
+    "email": "AfriaStudios@outlook.in",
+    "url": "https://github.com/Kryft-Studios"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "dotenv": "^18.0.8",
+    "esbuild": "^0.28.2",
+    "terser": "^5.51.2",
+    "typescript": "5.8.3"
+  }
+}

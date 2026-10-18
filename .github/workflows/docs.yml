@@ -1,0 +1,10 @@
+name: Documentation
+on: [push, pull_request]
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y doxygen
+      - run: cmake --preset default
+      - run: cmake --build --preset default --target documentation
